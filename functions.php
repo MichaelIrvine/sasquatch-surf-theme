@@ -120,13 +120,11 @@ add_action( 'widgets_init', 'sasquatch_surf_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sasquatch_surf_scripts() {
-	wp_enqueue_style( 'sasquatch-surf-style', get_stylesheet_uri() );
-
-	// https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-
+	// wp_enqueue_style( 'sasquatch-surf-style', get_stylesheet_uri() );
+	wp_enqueue_style('main-styles', get_template_directory_uri() . '/dist/main.css', array(), get_the_time(), false);
 	wp_enqueue_script( 'sasquatch-surf-navigation', get_template_directory_uri() . '/src/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'sasquatch-surf-skip-link-focus-fix', get_template_directory_uri() . '/src/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script('sasquatch_bundle', get_template_directory_uri() . '/dist/bundle.js', array('jquery'), get_the_time(), true );
+	wp_enqueue_script('sasquatch_bundle', get_template_directory_uri() . '/dist/main.js', array('jquery'), get_the_time(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
