@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -15,21 +16,19 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary_contact" class="content-area page-contact">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+  <?php
+	while (have_posts()) :
+		the_post();
 
-		endwhile; // End of the loop.
-		?>
+		get_template_part('template-parts/content', 'custom');
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	endwhile; // End of the loop.
+	?>
+
+</div>
 
 <?php
-get_sidebar();
 get_footer();

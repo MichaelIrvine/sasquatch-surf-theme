@@ -1,0 +1,232 @@
+.site-header {
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+  background-color: $page-background;
+
+  @media (max-width: 780px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .site-branding {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 999;
+
+    @media (max-width: 780px) {
+      justify-content: flex-start;
+    }
+
+    .custom-logo-link {
+      max-width: 250px;
+      margin: 1rem;
+
+      @media (max-width: 780px) {
+        width: 150px;
+      }
+      &:focus {
+        outline: 1px solid $front-page-header;
+      }
+    }
+  }
+}
+// Hide Flower illustrations for mobile
+@media (max-width: 780px) {
+  .flower-1,
+  .flower-2 {
+    display: none;
+  }
+}
+
+// Navigation
+
+// Mobile Menu Toggle
+.menu-toggle {
+  display: none;
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+  position: relative;
+
+  @media screen and (max-width: 780px) {
+    display: block;
+    text-transform: uppercase;
+    margin: 1rem;
+    padding: 0;
+  }
+}
+
+.menu-toggle-icon {
+  position: absolute;
+}
+
+// Menu Toggle Top Line
+.menu-toggle-icon:nth-of-type(1) {
+  top: 0;
+  transform-origin: left center;
+  transition: transform 400ms ease-in-out;
+}
+.menu-toggle-icon:nth-of-type(1).open {
+  transform: rotate(45deg);
+  top: 3px;
+  left: 1px;
+}
+
+// Menu toggle middle line
+.menu-toggle-icon:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  transition: 500ms ease-in-out;
+}
+.menu-toggle-icon:nth-of-type(2).open {
+  opacity: 0;
+}
+
+// Menu toggle bottom line
+.menu-toggle-icon:nth-of-type(3) {
+  bottom: 0;
+  transform-origin: left center;
+  transition: transform 400ms ease-in-out;
+}
+.menu-toggle-icon:nth-of-type(3).open {
+  transform: rotate(-45deg);
+  bottom: 3px;
+  left: 1px;
+}
+
+.menu-toggle-icon:not(.menu-toggle-icon__middle) {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: $black;
+  border-radius: 1px;
+}
+
+.menu-toggle-icon__middle {
+  font-size: 2.3rem;
+  font-weight: 900;
+  line-height: 0.75;
+  display: block;
+}
+
+.main-navigation {
+  height: 100px;
+
+  .menu-menu-1-container {
+    background-color: rgba($color: #ffffff, $alpha: 1);
+    border: 1px solid black;
+    border-right: 0px;
+    border-left: 0px;
+    height: 100px;
+
+    @media (max-width: 780px) {
+      border: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0px;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 700ms ease-in-out;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+
+      @media (max-width: 780px) {
+        display: none;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .menu-item {
+        margin: 1rem 0;
+
+        @media (max-width: 780px) {
+          text-align: center;
+          margin: 0;
+        }
+
+        a {
+          color: $black;
+          text-transform: uppercase;
+          border-bottom: 1px solid transparent;
+          margin: 1rem;
+
+          @media (max-width: 780px) {
+            font-weight: 400;
+            font-size: 2rem;
+          }
+
+          @media (max-width: 420px) {
+            font-size: 1.25rem;
+          }
+
+          &:focus {
+            outline: 1px solid $black;
+          }
+
+          &:hover {
+            border-bottom: 1px solid $black;
+            border-top: 1px solid $black;
+          }
+        }
+        &:not(:last-child):after {
+          content: '~';
+          font-weight: 900;
+
+          @media (max-width: 780px) {
+            display: none;
+          }
+        }
+      }
+
+      .current-menu-item a {
+        border-bottom: 1px solid $black;
+        border-top: 1px solid $black;
+      }
+    }
+  }
+}
+
+.nav-menu.menu-toggled {
+  display: flex !important;
+}
+
+// Position Mobile Menu
+.menu-menu-1-container.open {
+  height: 100%;
+  opacity: 1;
+}
+
+// Prevent scrolling on mobile when menu is open
+body.prevent-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 780px) {
+  .menu-item:first-of-type {
+    &:before {
+      content: '~';
+      display: block;
+      font-weight: 900;
+      font-size: 2rem;
+    }
+  }
+
+  .menu-item:last-of-type {
+    &:after {
+      content: '~';
+      display: block;
+      font-weight: 900;
+      font-size: 2rem;
+    }
+  }
+}

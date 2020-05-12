@@ -1,0 +1,24 @@
+@import './header';
+@import './footer';
+@import './forms';
+
+body {
+  height: 100vh;
+}
+
+// Pages
+.site-content {
+  background-color: $page-background;
+}
+.content-area {
+  margin: 0 auto;
+  max-width: 1500px;
+}
+.entry-content {
+  margin-top: -40px;
+
+  @media (max-width: 780px) {
+    margin-top: 1rem;
+    z-index: 0;
+  }
+}

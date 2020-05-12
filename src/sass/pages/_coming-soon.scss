@@ -1,0 +1,21 @@
+body.home {
+  .site-header {
+    // ***
+    // Header hidden for Coming soon page
+    // ***
+    // display: none;
+  }
+
+  .coming-soon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .coming-soon__text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

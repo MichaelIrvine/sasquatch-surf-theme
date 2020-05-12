@@ -15,9 +15,15 @@
 
 get_header();
 ?>
-<main class="front-page__background-image"
+<main class="coming-soon front-page__background-image "
   style="background-image: url(<?php the_field('front_page_background_image'); ?>);">
-
+  <div class="front-page--sasquatch-logo__container">
+    <?php echo wp_get_attachment_image(33, array('250', '250'), "", array("class" => "front-page--sasquatch-logo"));  ?>
+  </div>
+  <div class="coming-soon__text-container">
+    <h1>Sasquatch Surf</h1>
+    <h3>Coming Soon</h3>
+  </div>
 </main>
 
 <?php

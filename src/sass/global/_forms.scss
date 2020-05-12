@@ -1,0 +1,43 @@
+// Contact Form Global Styles
+.wpcf7 {
+  .wpcf7-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    p {
+      .wpcf7-form-control-wrap {
+        input {
+          border: 1px solid $black;
+          border-radius: 5px;
+          font-size: 0.75rem;
+          margin-bottom: 10px;
+          padding: 0.5rem;
+        }
+
+        textarea {
+          border: 1px solid $black;
+          border-radius: 5px;
+          height: 125px;
+          font-size: 0.75rem;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.wpcf7-submit {
+  background-color: $black;
+  color: #ffffff;
+  width: 50%;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
